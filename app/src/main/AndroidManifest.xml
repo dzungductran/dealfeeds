@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.notalenthack.dealfeeds">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service
+                android:name="com.notalenthack.dealfeeds.service.TightwadService"
+                android:label="@string/service_name"
+                android:process=":TightwadService"
+                android:exported="false"
+                android:enabled="true">
+            <intent-filter>
+                <action
+                        android:name="com.notalenthack.dealfeeds.service.TightwadService"/>
+            </intent-filter>
+        </service>
+        <receiver
+                android:name="com.notalenthack.dealfeeds.service.OnBootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+        <provider
+                android:name="com.notalenthack.dealfeeds.service.provider.ItemsContentProvider"
+                android:process=":TightwadService"
+                android:exported="false"
+                android:authorities="com.notalenthack.dealfeeds.service.provider.crapcontentprovider" >
+        </provider>
+
+        <activity android:name="com.notalenthack.dealfeeds.appl.MainActivity"
+                  android:screenOrientation="portrait"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".appl.SearchableActivity" />
+        </activity>
+        <activity android:name="com.notalenthack.dealfeeds.appl.SplashScreen"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+    	<activity android:name="com.notalenthack.dealfeeds.appl.SearchableActivity"
+                  android:screenOrientation="portrait">
+    	    <intent-filter>            
+    	        <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+    	    <meta-data android:name="android.app.searchable"
+    	          android:resource="@xml/searchable"/>
+    	</activity>
+    	<activity android:name="com.notalenthack.dealfeeds.appl.BrowserActivity"
+                  android:screenOrientation="portrait"></activity>
+        <activity android:name="com.notalenthack.dealfeeds.appl.ItemListActivity"
+                  android:screenOrientation="portrait"></activity>
+        <activity android:name="com.notalenthack.dealfeeds.appl.ItemActivity"
+                  android:screenOrientation="portrait"></activity>
+        <meta-data android:name="android.app.default.searchable" android:value=".appl.SearchableActivity" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="Google_maps_API_KEY_goes_here" />
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="Crashlytics_API_KEY_goes_here"/>
+
+    </application>
+</manifest>

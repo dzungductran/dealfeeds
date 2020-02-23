@@ -1,0 +1,44 @@
+*.pydevproject
+.metadata
+gen/**
+bin/**
+tmp/**
+out/**
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+*.class
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# IntelliJ
+# *.iml
+out/
+#.idea/    looks like for gradle you need to checkin .idea
+.idea/dictionaries/*.xml
+.idea/caches/*
+.settings/
+
+project.properties
+
+# mac
+.DS_Store
+._.DS_Store
+
+# gradle
+*/build/**
+build/**
+.gradle/**

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deal Feeds</string>
+    <string name="service_name">Tightwad Service</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_search">Search</string>
+    <string name="search_hint">Search product type</string>
+    <string name="title_settings">Settings</string>
+    <string name="drawer_open">Open Settings</string>
+    <string name="drawer_close">Close Settings</string>
+    <string name="competive_screen_title">Similar Products</string>
+    <string name="search_result">Search results for</string>
+    <string name="item_found">Match for:</string>
+    <string name="status_ticker">Deal Feeds</string>
+    <string name="cancel_str">Cancel</string>
+    <string name="no_item_str">Sorry, no similar item found</string>
+    <string name="pull_startup">Refresh feeds on application startup</string>
+    <string name="pull_now">Refresh feeds now</string>
+    <string name="data_mgnt">Data Management</string>
+    <string name="compare_shop">Comparison Shopping</string>
+    <string name="compare_ebay">Compare with Ebay</string>
+    <string name="share">Share</string>
+</resources>

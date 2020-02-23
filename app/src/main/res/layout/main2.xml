@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:background="#00000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTabStrip
+        android:id="@+id/pager_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/title_tab_strip"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp" />
+    </android.support.v4.view.ViewPager>
+
+    <!-- The navigation drawer -->
+    <!-- should not be larger than 320 to show content -->
+    <ScrollView android:id="@+id/left_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#FFFFFF">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <!-- The Data Management -->
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/data_mgnt"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_alignParentLeft="true" />
+
+            <View android:id="@+id/separator"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/holo_light_background"
+                android:layout_below="@+id/label1"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pull_startup"
+                android:id="@+id/pull_app_start"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/separator"
+                android:checked="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:text="@string/pull_now"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/pull_app_start"
+                android:id="@+id/once_daily"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+             <!-- Comparison Shopping -->
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/compare_shop"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/once_daily"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_alignParentLeft="true" />
+
+            <View android:id="@+id/separator2"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/holo_light_background"
+                android:layout_below="@+id/label2"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/compare_ebay"
+                android:id="@+id/compare_ebay"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/separator2"
+                android:layout_alignLeft="@+id/once_daily"
+                android:checked="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.v4.widget.DrawerLayout>
